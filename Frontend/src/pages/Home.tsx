@@ -7,9 +7,11 @@ import Button from "@mui/material/Button";
 
 import MenuComponent from "../components/MenuComponent";
 import { JobSeekerSignUpComp } from "../components/JobSeekerSignUpComp";
+import { CompanySignUpComp } from "../components/CompanySignUpComp";
 
 export default function Home() {
   const [openJSSignUp, setOpenJSSignUp] = useState(false);
+  const [openCSignUp, setOpenCSignUp] = useState(false);
 
   const handleJSSignUpOpen = () => {
     setOpenJSSignUp(true);
@@ -17,6 +19,14 @@ export default function Home() {
 
   const handleJSSignUpClose = () => {
     setOpenJSSignUp(false);
+  };
+
+  const handleCSignUpOpen = () => {
+    setOpenCSignUp(true);
+  };
+
+  const handleCSignUpClose = () => {
+    setOpenCSignUp(false);
   };
 
   return (
@@ -63,12 +73,14 @@ export default function Home() {
             fontSize: "1.05rem",
           }}
           variant="outlined"
-          onClick={() => {
-            console.log("companyyyyy");
-          }}
+          onClick={handleCSignUpOpen}
         >
           As Company
         </Button>
+        <CompanySignUpComp
+          open={openCSignUp}
+          handleClose={handleCSignUpClose}
+        />
       </div>
     </div>
   );
