@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/dummy-logo.png";
 import ProfAvatar from "../assets/profile-avatar.jpg";
+import BannerBackground from "../assets/background-banner.png";
 import BannerImage1 from "../assets/banner-image1.jpg";
 import BannerImage2 from "../assets/banner-image2.png";
 import BannerImage3 from "../assets/banner-image3.jpg";
@@ -10,8 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import BoltRoundedIcon from "@mui/icons-material/BoltRounded";
-import ShieldRoundedIcon from "@mui/icons-material/ShieldRounded";
+import ManageHistoryRoundedIcon from "@mui/icons-material/ManageHistoryRounded";
+import VerifiedUserRoundedIcon from "@mui/icons-material/VerifiedUserRounded";
 
 import MenuComponent from "../components/MenuComponent";
 import { JobSeekerSignUpComp } from "../components/JobSeekerSignUpComp";
@@ -39,7 +40,15 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative bg-neutral-200 h-screen pb-24 pt-14 flex flex-col justify-center">
+      <div
+        className="relative bg-neutral-200 h-screen pb-24 pt-14 flex flex-col justify-center"
+        style={{
+          backgroundImage: `url(${BannerBackground})`,
+          // backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+        }}
+      >
         <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
           <Link to="/">
             <img src={Logo} alt="dummy-logo" style={{ height: 50 }} />
@@ -102,7 +111,7 @@ export default function Home() {
           paddingRight: "6%",
         }}
       >
-        <Grid container spacing={2} className="pb-16">
+        <Grid container spacing={2} className="pb-24">
           <Grid
             item
             xs={12}
@@ -139,7 +148,7 @@ export default function Home() {
             flexDirection="column"
             alignItems="center"
           >
-            <BoltRoundedIcon
+            <ManageHistoryRoundedIcon
               sx={{
                 fontSize: 200,
                 color: "#10b981",
@@ -166,7 +175,7 @@ export default function Home() {
             flexDirection="column"
             alignItems="center"
           >
-            <ShieldRoundedIcon
+            <VerifiedUserRoundedIcon
               sx={{
                 fontSize: 180,
                 color: "#10b981",
