@@ -93,7 +93,7 @@ export default function JobSeekerProfile() {
             alignItems="center"
             style={{ padding: "16px", paddingLeft: "0px" }}
           >
-            <div className="h-full w-full bg-gray-500 rounded"></div>
+            <div className="h-full w-full bg-gray-50 rounded"></div>
           </Grid>
         </Grid>
       </div>
