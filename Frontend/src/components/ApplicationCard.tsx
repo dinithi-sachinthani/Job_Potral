@@ -3,64 +3,28 @@ import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 
 import ProfAvatar from "../assets/profile-avatar.jpg";
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 
-interface TruncatedTextProps {
-  text: string;
-  maxLines?: number;
-}
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 type MyFunc = () => void;
 
 interface CardProps {
-  image: string;
+  companyName: String;
   handleDecline: MyFunc;
   handleAccept: MyFunc;
+  handleClose: MyFunc;
 }
 
-const TruncatedText: React.FC<TruncatedTextProps> = ({ text, maxLines }) => {
-  const [showMore, setShowMore] = useState(false);
-
-  const toggleShowMore = () => {
-    setShowMore(!showMore);
-  };
-
-  return (
-    <div>
-      <div
-        className={`text-sm font-normal ${
-          showMore ? "" : "line-clamp line-clamp-" + maxLines
-        }`}
-      >
-        {text}
-      </div>
-      {!showMore && (
-        <span
-          className="text-blue-500 text-xs cursor-pointer"
-          onClick={toggleShowMore}
-        >
-          See more
-        </span>
-      )}
-      {showMore && (
-        <span
-          className="text-blue-500 text-xs cursor-pointer"
-          onClick={toggleShowMore}
-        >
-          See less
-        </span>
-      )}
-    </div>
-  );
-};
-
-const FeedCard: React.FC<CardProps> = ({
-  image,
+const ApplicationCard: React.FC<CardProps> = ({
+  companyName,
   handleAccept,
   handleDecline,
+  handleClose,
 }) => {
   return (
-    <div className="h-full w-full bg-gray-200 rounded p-3 flex flex-col">
+    <div className="relative h-full w-full bg-gray-200 rounded p-3 flex flex-col">
       <div className="flex flex-row">
         <Avatar alt="Remy Sharp" src={ProfAvatar} />
         <div className="flex flex-col ml-3">
@@ -70,44 +34,62 @@ const FeedCard: React.FC<CardProps> = ({
           </p>
         </div>
         <p className="font-sans text-sm font-normal">Job Category</p>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: "absolute",
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
       </div>
-      <div
-        className="btn-bottom"
-        style={{
-          display: "flex",
-          gap: "3px",
-          marginTop: "auto",
-          paddingTop: "8px",
-        }}
-      >
-        <Button
+      <div className="bottom flex flex-row">
+        <p
+          className="text-normal"
           style={{
-            flex: "70%",
-            marginRight: "3px",
-            textTransform: "none",
-            fontSize: "0.8rem",
+            paddingTop: "9px",
           }}
-          variant="outlined"
-          size="small"
-          onClick={handleAccept}
         >
-          Apply now
-        </Button>
-        <Button
+          @{companyName}
+        </p>
+        <div
+          className="btn-bottom flex flex-row"
           style={{
-            flex: "30%",
-            textTransform: "none",
-            fontSize: "0.8rem",
+            marginLeft: "auto",
+            paddingTop: "8px",
           }}
-          variant="outlined"
-          size="small"
-          onClick={handleDecline}
         >
-          Decline
-        </Button>
+          <Button
+            style={{
+              marginRight: "3px",
+              textTransform: "none",
+              fontSize: "0.8rem",
+            }}
+            variant="outlined"
+            size="small"
+            onClick={handleAccept}
+          >
+            Apply now
+          </Button>
+          <Button
+            style={{
+              textTransform: "none",
+              fontSize: "0.8rem",
+            }}
+            variant="outlined"
+            size="small"
+            onClick={handleDecline}
+          >
+            Decline
+          </Button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default FeedCard;
+export default ApplicationCard;
