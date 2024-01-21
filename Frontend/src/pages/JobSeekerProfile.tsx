@@ -13,6 +13,7 @@ import RightDrawerComp from "../components/RightDrawerComp";
 import { NotificationsComp } from "../components/NotificationComp";
 import SearchBar from "../components/SearchBar";
 import SideTabs from "../components/SideTabs";
+import Divider from "@mui/material/Divider";
 
 export default function JobSeekerProfile() {
   const [badgeContent, setBadgeContent] = useState<number>(0);
@@ -93,7 +94,97 @@ export default function JobSeekerProfile() {
             alignItems="center"
             style={{ padding: "16px", paddingLeft: "0px" }}
           >
-            <div className="h-full w-full bg-gray-50 rounded"></div>
+            <div className="h-full py-8 px-5 w-full bg-gray-50 rounded flex flex-col items-center">
+              <Avatar
+                alt="Remy Sharp"
+                src={ProfAvatar}
+                style={{ width: "50%", height: "auto" }}
+              />
+              <p className="text-2xl font-semibold mt-1">Username</p>
+              <p className="text-xl text-center font-light">fname lname</p>
+              <p className="text-sm text-center font-extralight">
+                Full stack developer | Video gamer | Designer
+              </p>
+              <p className="text-sm text-center font-normal mt-2">
+                exampleemail@gmail.com
+              </p>
+              <div className="age w-full flex flex-row">
+                <p className="text-md font-semibold mt-3">Age</p>
+                <p className="text-md text-gray-600 font-normal mt-3 ml-auto">
+                  23
+                </p>
+              </div>
+              <div className="gender w-full flex flex-row">
+                <p className="text-md font-semibold mt-1">Gender</p>
+                <p className="text-md text-gray-600 font-normal mt-1 ml-auto">
+                  Male
+                </p>
+              </div>
+              <div className="phone w-full flex flex-row">
+                <p className="text-md font-semibold mt-1">Phone</p>
+                <p className="text-md text-gray-600 font-normal mt-1 ml-auto">
+                  077 1234 567
+                </p>
+              </div>
+              <div className="address w-full flex flex-row">
+                <p className="text-md font-semibold mt-auto ">Address</p>
+                <div className="ml-auto">
+                  <p className="text-md text-gray-600 font-normal mt-2 ">
+                    address line 1,
+                  </p>
+                  <p className="text-md text-gray-600 font-normal mt-0">
+                    address line 2,
+                  </p>
+                  <p className="text-md text-gray-600 font-normal mt-0">
+                    address line 3
+                  </p>
+                </div>
+              </div>
+              <Divider
+                style={{
+                  width: "100%",
+                  marginTop: "15px",
+                  marginBottom: "20px",
+                }}
+              />
+              <div className="education w-full flex flex-col">
+                <p className="text-xl font-semibold mb-2 mt-1">Education</p>
+                <p className="text-md text-justify text-gray-600 font-normal mt-1">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Possimus ipsum expedita
+                </p>
+              </div>
+              <Divider
+                style={{
+                  width: "100%",
+                  marginTop: "15px",
+                  marginBottom: "20px",
+                }}
+              />
+              <div className="about w-full flex flex-col">
+                <p className="text-xl font-semibold mb-2 mt-1">About</p>
+                <p className="text-md text-justify text-gray-600 font-normal mt-1">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Possimus ipsum expedita
+                </p>
+              </div>
+              <Divider
+                style={{
+                  width: "100%",
+                  marginTop: "15px",
+                  marginBottom: "20px",
+                }}
+              />
+              <div className="skills w-full flex flex-col">
+                <p className="text-xl font-semibold mb-2 mt-1">Skills</p>
+                <p className="text-md text-justify text-gray-600 font-normal mt-1">
+                  skill 1
+                </p>
+                <p className="text-md text-justify text-gray-600 font-normal mt-1">
+                  skill 2
+                </p>
+              </div>
+            </div>
           </Grid>
         </Grid>
       </div>
