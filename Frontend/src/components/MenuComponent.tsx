@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Link } from "react-router-dom";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -45,8 +46,12 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Job Seeker</MenuItem>
-        <MenuItem onClick={handleClose}>Company</MenuItem>
+        <Link to="/login">
+          <MenuItem onClick={handleClose}>Job Seeker</MenuItem>
+        </Link>
+        <Link to="/login">
+          <MenuItem onClick={handleClose}>Company</MenuItem>
+        </Link>
       </Menu>
     </div>
   );
