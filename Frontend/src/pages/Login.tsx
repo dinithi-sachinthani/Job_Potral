@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link as DomLink } from "react-router-dom";
-import Logo from "../assets/dummy-logo.png";
+import Logo from "../assets/logo.jpeg";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -29,12 +29,14 @@ export default function Login() {
     <div className="relative bg-neutral-200 h-screen pt-14 flex flex-row justify-start">
       <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
         <DomLink to="/">
-          <img src={Logo} alt="dummy-logo" style={{ height: 50 }} />
+          <img src={Logo} alt="logo" style={{ height: 50 }} />
         </DomLink>
       </div>
       <div className="left-side h-full w-3/5 flex flex-col justify-center">
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <img src={Logo} alt="dummy-logo" style={{ width: "75%" }} />
+          <p className="font-sans text-center text-6xl text-cyan-600 font-bold">
+            INTERNLA
+          </p>
         </div>
         <p className="font-sans text-center text-3xl font-normal w-3/5 mx-auto">
           Unleash your potential, embrace the extraodinary test

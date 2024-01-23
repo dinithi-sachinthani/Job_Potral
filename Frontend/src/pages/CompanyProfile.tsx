@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/dummy-logo.png";
+import Logo from "../assets/logo.jpeg";
 import ProfAvatar from "../assets/profile-avatar.jpg";
 
 import Avatar from "@mui/material/Avatar";
@@ -13,7 +13,7 @@ export default function CompanyProfile() {
       <div className="relative bg-neutral-200 h-screen pb-24 pt-14 flex flex-col justify-center">
         <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
           <Link to="/">
-            <img src={Logo} alt="dummy-logo" style={{ height: 50 }} />
+            <img src={Logo} alt="logo" style={{ height: 50 }} />
           </Link>
           <div className="avatar my-auto flex flex-row">
             <Avatar alt="Remy Sharp" src={ProfAvatar} />
@@ -21,7 +21,9 @@ export default function CompanyProfile() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <img src={Logo} alt="dummy-logo" style={{ width: "70%" }} />
+          <p className="font-sans text-center text-6xl text-cyan-600 font-bold">
+            INTERNLA
+          </p>
         </div>
         <p className="font-sans text-center text-4xl font-medium">
           Company Profile
