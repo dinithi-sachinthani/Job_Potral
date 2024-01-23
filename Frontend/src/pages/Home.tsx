@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/dummy-logo.png";
+import Logo from "../assets/logo.jpeg";
 import ProfAvatar from "../assets/profile-avatar.jpg";
 import BannerBackground from "../assets/background-banner.png";
-import BannerImage1 from "../assets/banner-image1.jpg";
+import about_us from "../assets/about_us.webp";
 import BannerImage2 from "../assets/banner-image2.png";
 import BannerImage3 from "../assets/banner-image3.jpg";
 
@@ -51,7 +51,7 @@ export default function Home() {
       >
         <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
           <Link to="/">
-            <img src={Logo} alt="dummy-logo" style={{ height: 50 }} />
+            <img src={Logo} alt="logo" style={{ height: 50 }} />
           </Link>
           <div className="avatar my-auto flex flex-row">
             <Avatar alt="Remy Sharp" src={ProfAvatar} />
@@ -59,7 +59,9 @@ export default function Home() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <img src={Logo} alt="dummy-logo" style={{ width: "70%" }} />
+          <p className="font-sans text-center text-6xl text-cyan-600 font-bold">
+            INTERNLA
+          </p>
         </div>
         <p className="font-sans text-center text-4xl font-medium">
           Empowering Your Career Journey
@@ -133,10 +135,10 @@ export default function Home() {
               Find Your Job Easier
             </p>
             <p className="text-center font-normal">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              nulla sint dolorem soluta laborum amet culpa architecto
-              consequuntur animi iure corporis facere repellendus officiis
-              suscipit sequi dolore
+              Navigate your career path seamlessly. Our advanced search features
+              empower you to find the perfect job match quickly. Tailor your
+              search by industry, location, and skills. Your next career move is
+              just a click away
             </p>
           </Grid>
           <Grid
@@ -160,10 +162,10 @@ export default function Home() {
               Easy Application Process
             </p>
             <p className="text-center font-normal">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              nulla sint dolorem soluta laborum amet culpa architecto
-              consequuntur animi iure corporis facere repellendus officiis
-              suscipit sequi dolore
+              Simplify your journey to success with our streamlined application
+              process. Effortlessly apply to your desired jobs with just a few
+              clicks. Accelerate your career by connecting with opportunities
+              through an intuitive and user-friendly application experience.
             </p>
           </Grid>
           <Grid
@@ -187,10 +189,11 @@ export default function Home() {
               Trust and Security
             </p>
             <p className="text-center font-normal">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              nulla sint dolorem soluta laborum amet culpa architecto
-              consequuntur animi iure corporis facere repellendus officiis
-              suscipit sequi dolore
+              Your trust is our priority. We prioritize security with encrypted
+              data, ensuring your job search or recruitment process is
+              confidential and secure. Build your future with confidence,
+              knowing your information is protected on our trusted job portal
+              platform.
             </p>
           </Grid>
         </Grid>
@@ -204,16 +207,14 @@ export default function Home() {
         }}
       >
         <div className="left flex flex-col justify-center">
-          <p className="text-4xl font-medium mb-8">
-            Title One: This is your title one
-          </p>
+          <p className="text-4xl font-medium mb-8">About Us</p>
           <p className="text-xl font-light pr-14">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            explicabo quisquam architecto blanditiis dolor necessitatibus minima
-            commodi quos beatae hic! Alias illum hic magni! Consequuntur odio
-            facilis rerum beatae sequi quo magni unde ratione maxime, molestias
-            officia excepturi quos in eaque, quae, deleniti esse. Iusto fuga
-            itaque magni numquam neque.
+            At INTERNLA, we are dedicated to connecting talented professionals
+            with rewarding opportunities. Our platform simplifies the job search
+            and recruitment process, offering user-friendly tools and a vast
+            network of employers. Whether you're a job seeker or employer, trust
+            us to streamline your journey, making the path to success smoother
+            and more efficient.
           </p>
         </div>
         <div
@@ -221,7 +222,7 @@ export default function Home() {
           style={{
             width: "1500px",
             height: "400px",
-            backgroundImage: `url(${BannerImage1})`,
+            backgroundImage: `url(${about_us})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

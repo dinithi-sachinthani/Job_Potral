@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../assets/dummy-logo.png";
+import Logo from "../assets/logo.jpeg";
 import ProfAvatar from "../assets/profile-avatar.jpg";
 
 import Avatar from "@mui/material/Avatar";
@@ -33,7 +33,7 @@ export default function JobSeekerProfile() {
       <div className="relative bg-neutral-200 h-screen pt-14 flex flex-col justify-center">
         <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
           <Link to="/">
-            <img src={Logo} alt="dummy-logo" style={{ height: 50 }} />
+            <img src={Logo} alt="logo" style={{ height: 50 }} />
           </Link>
           <SearchBar />
           <div className="avatar my-auto flex flex-row">
