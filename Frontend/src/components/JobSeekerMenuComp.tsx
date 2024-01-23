@@ -1,11 +1,17 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Link } from "react-router-dom";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
-export default function BasicMenu() {
+interface BasicMenuProps {
+  children: React.ReactNode;
+}
+
+export const MenuComponent: React.FC<BasicMenuProps> = ({ children }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -35,7 +41,7 @@ export default function BasicMenu() {
           />
         }
       >
-        Log in as
+        {children}
       </Button>
       <Menu
         id="basic-menu"
@@ -47,14 +53,13 @@ export default function BasicMenu() {
         }}
       >
         {/* <Link to="/login"> */}
-        <Link to="/jobseeker">
-          <MenuItem onClick={handleClose}>Job Seeker</MenuItem>
-        </Link>
-        {/* <Link to="/login"> */}
-        <Link to="/company">
-          <MenuItem onClick={handleClose}>Company</MenuItem>
+        <Link to="/login">
+          <MenuItem onClick={handleClose}>
+            <LogoutRoundedIcon className="mr-2" />
+            Logout
+          </MenuItem>
         </Link>
       </Menu>
     </div>
   );
-}
+};

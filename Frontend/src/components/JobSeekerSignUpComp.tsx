@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
@@ -7,6 +8,15 @@ import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import TextField from "@mui/material/TextField";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 type MyFunc = () => void;
 
@@ -28,6 +38,8 @@ export const JobSeekerSignUpComp: React.FC<CustomizedDialogsProps> = ({
   handleClose,
   open,
 }) => {
+  const [value, setValue] = useState<Date | null>(new Date());
+
   return (
     <>
       <BootstrapDialog
@@ -85,6 +97,38 @@ export const JobSeekerSignUpComp: React.FC<CustomizedDialogsProps> = ({
             size="small"
             style={{ width: "416px", paddingBottom: "10px" }}
           />
+          <div style={{ width: "416px" }}>
+            <FormControl>
+              <FormLabel id="demo-row-radio-buttons-group-label">
+                Gender
+              </FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+              >
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  label="Female"
+                />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Male"
+                />
+              </RadioGroup>
+            </FormControl>
+            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["DatePicker", "DatePicker"]}>
+                <DatePicker
+                  label="Controlled picker"
+                  value={value}
+                  onChange={(newValue) => setValue(newValue)}
+                />
+              </DemoContainer>
+            </LocalizationProvider> */}
+          </div>
           <TextField
             id="outlined-basic"
             label="Telephone"
