@@ -49,7 +49,7 @@ export default function Home() {
           backgroundRepeat: "repeat",
         }}
       >
-        <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
+        <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20 z-10">
           <Link to="/">
             <img src={Logo} alt="logo" style={{ height: 50 }} />
           </Link>
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <p className="font-sans text-center text-6xl text-cyan-600 font-bold">
+          <p className="font-sans text-center text-6xl text-cyan-600 font-bold mb-5">
             INTERNLA
           </p>
         </div>

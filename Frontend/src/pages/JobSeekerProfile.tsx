@@ -31,7 +31,7 @@ export default function JobSeekerProfile() {
   return (
     <>
       <div className="relative bg-neutral-200 h-screen pt-14 flex flex-col justify-center">
-        <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20">
+        <div className="menu-bar w-full h-14 bg-slate-50 flex flex-row fixed top-0 left-0 justify-between px-20 z-10">
           <Link to="/">
             <img src={Logo} alt="logo" style={{ height: 50 }} />
           </Link>
