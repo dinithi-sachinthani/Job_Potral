@@ -77,6 +77,7 @@ export default function VerticalTabs() {
       </Tabs>
       <TabPanel value={value} index={0}>
         <FeedTabPlane
+          isCompany={false}
           handleFunc={() => {
             console.log("Feed!!");
           }}

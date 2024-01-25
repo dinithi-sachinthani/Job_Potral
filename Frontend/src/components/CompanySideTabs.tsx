@@ -9,6 +9,7 @@ import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import Divider from "@mui/material/Divider";
 import CachedRoundedIcon from "@mui/icons-material/CachedRounded";
 
+import ProfileTabPlane from "./ProfileTabPlane";
 import FeedTabPlane from "./FeedTabPlane";
 import ApplicationTabPlane from "./ApplicationTabPlane";
 import Logo from "../assets/logo.jpeg";
@@ -53,7 +54,7 @@ export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
   handleFunc,
 }) => {
   // export default function VerticalTabs: React.FC<TemporaryDrawerProps>({handleFunc}) {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(1);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -126,7 +127,12 @@ export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
           />
         </Tabs>
         <TabPanel value={value} index={1}>
-          <FeedTabPlane
+          {/* <FeedTabPlane
+            handleFunc={() => {
+              console.log("Feed!!");
+            }}
+          /> */}
+          <ProfileTabPlane
             handleFunc={() => {
               console.log("Feed!!");
             }}
@@ -134,6 +140,7 @@ export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
         </TabPanel>
         <TabPanel value={value} index={2}>
           <FeedTabPlane
+            isCompany={true}
             handleFunc={() => {
               console.log("Feed!!");
             }}
@@ -141,6 +148,7 @@ export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
         </TabPanel>
         <TabPanel value={value} index={3}>
           <ApplicationTabPlane
+            isCompany={true}
             handleFunc={() => {
               console.log("Application!!");
             }}
