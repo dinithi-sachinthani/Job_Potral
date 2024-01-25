@@ -6,6 +6,14 @@
     width: 100%;
 }
 
+#vertical-tabpanel-2 {
+    width: 100%;
+}
+
+#vertical-tabpanel-3 {
+    width: 100%;
+}
+
 .line-clamp {
     overflow: hidden;
     display: -webkit-box;

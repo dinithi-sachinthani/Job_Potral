@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import DynamicFeedRoundedIcon from "@mui/icons-material/DynamicFeedRounded";
 import DomainVerificationRoundedIcon from "@mui/icons-material/DomainVerificationRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+import Divider from "@mui/material/Divider";
+import CachedRoundedIcon from "@mui/icons-material/CachedRounded";
 
 import FeedTabPlane from "./FeedTabPlane";
 import ApplicationTabPlane from "./ApplicationTabPlane";
+import Logo from "../assets/logo.jpeg";
+import Button from "@mui/material/Button";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -38,7 +43,16 @@ function a11yProps(index: number) {
   };
 }
 
-export default function VerticalTabs() {
+type MyFunc = () => void;
+
+interface TemporaryDrawerProps {
+  handleFunc: MyFunc;
+}
+
+export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
+  handleFunc,
+}) => {
+  // export default function VerticalTabs: React.FC<TemporaryDrawerProps>({handleFunc}) {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -46,53 +60,93 @@ export default function VerticalTabs() {
   };
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        bgcolor: "background.paper",
-        display: "flex",
-        height: "100%",
-        width: "100%",
-        borderRadius: "50px",
-      }}
-    >
-      <Tabs
-        orientation="vertical"
-        // variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs example"
+    <>
+      <Box
         sx={{
-          borderRight: 1,
-          borderColor: "divider",
-          "& .Mui-selected": {
-            backgroundColor: "#f1f5f9",
-          },
+          flexGrow: 1,
+          bgcolor: "background.paper",
+          display: "flex",
+          height: "100%",
+          width: "100%",
+          borderRadius: "50px",
         }}
       >
-        <p>safasf</p>
-        <Tab icon={<PersonRoundedIcon />} label="Profile" {...a11yProps(0)} />
-        <Tab icon={<DynamicFeedRoundedIcon />} label="Feed" {...a11yProps(0)} />
-        <Tab
-          icon={<DomainVerificationRoundedIcon />}
-          label="Application"
-          {...a11yProps(1)}
-        />
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <FeedTabPlane
-          handleFunc={() => {
-            console.log("Feed!!");
+        <Tabs
+          orientation="vertical"
+          // variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            "& .Mui-selected": {
+              backgroundColor: "#f1f5f9",
+            },
+            width: "250px",
           }}
-        />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <ApplicationTabPlane
-          handleFunc={() => {
-            console.log("Application!!");
-          }}
-        />
-      </TabPanel>
-    </Box>
+        >
+          <Tab
+            label={
+              <>
+                <img
+                  src={Logo}
+                  alt="logo"
+                  style={{
+                    height: 70,
+                    marginTop: "10px",
+                    marginBottom: "4px",
+                  }}
+                />
+                <Divider style={{ width: "100%", marginTop: "15px" }} />
+              </>
+            }
+            disabled
+          />
+          <Tab
+            icon={<PersonRoundedIcon />}
+            iconPosition="start"
+            label="Profile"
+            style={{ justifyContent: "start", textTransform: "none" }}
+            {...a11yProps(0)}
+          />
+          <Tab
+            icon={<DynamicFeedRoundedIcon />}
+            iconPosition="start"
+            label="Posts"
+            style={{ justifyContent: "start", textTransform: "none" }}
+            {...a11yProps(1)}
+          />
+          <Tab
+            icon={<DomainVerificationRoundedIcon />}
+            iconPosition="start"
+            label="Applications"
+            style={{ justifyContent: "start", textTransform: "none" }}
+            {...a11yProps(2)}
+          />
+        </Tabs>
+        <TabPanel value={value} index={1}>
+          <FeedTabPlane
+            handleFunc={() => {
+              console.log("Feed!!");
+            }}
+          />
+        </TabPanel>
+        <TabPanel value={value} index={2}>
+          <FeedTabPlane
+            handleFunc={() => {
+              console.log("Feed!!");
+            }}
+          />
+        </TabPanel>
+        <TabPanel value={value} index={3}>
+          <ApplicationTabPlane
+            handleFunc={() => {
+              console.log("Application!!");
+            }}
+          />
+        </TabPanel>
+      </Box>
+    </>
   );
-}
+};
