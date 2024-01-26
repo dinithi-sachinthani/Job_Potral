@@ -94,7 +94,7 @@ export default function JobSeekerProfile() {
             alignItems="center"
             style={{ padding: "16px", paddingLeft: "0px" }}
           >
-            <div className="h-full py-8 px-5 w-full bg-gray-50 rounded flex flex-col items-center">
+            <div className="JS-profile h-full py-8 px-5 w-full bg-gray-50 rounded flex flex-col items-center">
               <Avatar
                 alt="Remy Sharp"
                 src={ProfAvatar}

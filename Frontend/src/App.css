@@ -1,18 +1,26 @@
 #vertical-tabpanel-0 {
+    overflow-y: scroll;
     width: 100%;
 }
 
 #vertical-tabpanel-1 {
+    overflow-y: scroll;
     width: 100%;
 }
 
 #vertical-tabpanel-2 {
+    overflow-y: scroll;
     width: 100%;
 }
 
 #vertical-tabpanel-3 {
+    overflow-y: scroll;
     width: 100%;
 }
+
+/* .JS-profile {
+    overflow-y: scroll;
+} */
 
 .line-clamp {
     overflow: hidden;
