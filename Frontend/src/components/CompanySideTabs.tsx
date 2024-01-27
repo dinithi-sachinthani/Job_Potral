@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -7,13 +6,11 @@ import DynamicFeedRoundedIcon from "@mui/icons-material/DynamicFeedRounded";
 import DomainVerificationRoundedIcon from "@mui/icons-material/DomainVerificationRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import Divider from "@mui/material/Divider";
-import CachedRoundedIcon from "@mui/icons-material/CachedRounded";
 
 import ProfileTabPlane from "./ProfileTabPlane";
 import FeedTabPlane from "./FeedTabPlane";
 import ApplicationTabPlane from "./ApplicationTabPlane";
 import Logo from "../assets/logo.jpeg";
-import Button from "@mui/material/Button";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -127,11 +124,6 @@ export const CompanySideTabs: React.FC<TemporaryDrawerProps> = ({
           />
         </Tabs>
         <TabPanel value={value} index={1}>
-          {/* <FeedTabPlane
-            handleFunc={() => {
-              console.log("Feed!!");
-            }}
-          /> */}
           <ProfileTabPlane
             handleFunc={() => {
               console.log("Feed!!");

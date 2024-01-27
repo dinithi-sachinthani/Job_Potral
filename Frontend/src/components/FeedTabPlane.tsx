@@ -12,6 +12,7 @@ import BannerImage1 from "../assets/banner-image1.jpg";
 import BannerImage2 from "../assets/banner-image2.png";
 import BannerImage3 from "../assets/banner-image3.jpg";
 import { JobApplyComp } from "./JobApplyComp";
+import AddJobComp from "./AddJobComp";
 
 type MyFunc = () => void;
 
@@ -25,6 +26,7 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
   isCompany,
 }) => {
   const [openJA, setOpenJA] = useState(false);
+  const [openJApply, setOpenJApply] = useState(false);
 
   const handleJAOpen = () => {
     setOpenJA(true);
@@ -32,6 +34,14 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
 
   const handleJAClose = () => {
     setOpenJA(false);
+  };
+
+  const handleJApplyOpen = () => {
+    setOpenJApply(true);
+  };
+
+  const handleJApplyClose = () => {
+    setOpenJApply(false);
   };
 
   const breadcrumbs = [
@@ -79,6 +89,20 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
           Refresh
         </Button>
       </div>
+      {isCompany ? (
+        <div className="mx-4">
+          <AddJobComp
+            handleOpenModal={() => {
+              handleJApplyOpen;
+            }}
+            handleCloseModal={() => {
+              handleJApplyClose;
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="w-full h-full">
         <Grid container spacing={0} className="w-full">
           <Grid
@@ -125,7 +149,7 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
               }}
             />
           </Grid>
-          {/* <Grid
+          <Grid
             item
             xs={12}
             md={6}
@@ -139,6 +163,7 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
             <FeedCard
               image={BannerImage3}
               handleAccept={() => {
+                handleJAOpen();
                 console.log("Accept");
               }}
               handleDecline={() => {
@@ -160,16 +185,18 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({
             <FeedCard
               image={BannerImage1}
               handleAccept={() => {
+                handleJAOpen();
                 console.log("Accept");
               }}
               handleDecline={() => {
                 console.log("Decline");
               }}
             />
-          </Grid> */}
+          </Grid>
         </Grid>
       </div>
       <JobApplyComp open={openJA} handleClose={handleJAClose} />
+      <JobApplyComp open={openJApply} handleClose={handleJApplyClose} />
     </>
   );
 };

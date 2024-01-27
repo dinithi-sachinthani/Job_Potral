@@ -176,14 +176,6 @@ const ProfileTabPlane: React.FC<TemporaryDrawerProps> = ({ handleFunc }) => {
           />
           Setting
         </p>
-        {/* <div
-          className="bg-gray-200 w-full h-fit mt-8 mb-5 rounded flex flex-row text-gray-600"
-          onClick={() => {
-            console.log("settings");
-          }}
-        >
-          
-        </div> */}
         <ColorButton
           variant="contained"
           style={{
