@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
+MEDIA_URL='/media/'
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,9 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'internla_backend.apps.InternlaBackendConfig'
+    'internla_backend'
+
 
 ]
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 MIDDLEWARE = [
     'corsheaders.moddleware.CorsMiddleware',
@@ -83,7 +92,7 @@ import dj_database_url
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'internla_db',
+        'NAME': 'internla_db',
         'HOST':'127.0.0.1',
         'PORT':'3306',
         'USER':'root',
