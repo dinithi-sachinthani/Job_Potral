@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.moddleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -86,8 +86,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'internla_db',
         'HOST':'127.0.0.1',
         'PORT':'3306',
-        'USER':'root',
-        'PASSWORD':'root',
+        'USER':'sachi',
+        'PASSWORD':'sachi',
 
 
     }

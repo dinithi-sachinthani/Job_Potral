@@ -67,7 +67,7 @@ const FeedTabPlane: React.FC<TemporaryDrawerProps> = ({ handleFunc }) => {
               }}
             />
           </Grid>
-          <Grid
+          {/* <Grid
             item
             xs={12}
             md={6}
